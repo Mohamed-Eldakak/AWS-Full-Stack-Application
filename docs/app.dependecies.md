@@ -1,6 +1,6 @@
 # Application Dependencies
 
-## Udagram API Backend
+## Udagram API
 
 - AWS RDS Postgres database instance
 - AWS Elastic Beanstalk environment
@@ -64,7 +64,7 @@
 
 ```
 
-## Udagram UI Front-end
+## Udagram Front-end
 
 - AWS CLI v2.3.1
 - AWS Simple Storage Service bucket
