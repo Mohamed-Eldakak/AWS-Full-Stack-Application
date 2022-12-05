@@ -128,6 +128,13 @@ in `.circleci` folder `config.yml`:
 ![CircleCI-diagram](https://user-images.githubusercontent.com/106033884/205690295-b2944675-0813-409f-bae7-caeb967313f0.jpeg)
 
 
+--------
+## Documentation
+
+Documentation about the architecture, infrastructure description, app dependencies, and the pipeline process are found inside the [docs](https://github.com/Mohamed-Eldakak/AWS-Full-Stack-Application/tree/main/docs) folder.
+
+------
+
 ## Author
 
 The code was written by **Mohamed Eldakak** ([@mohamed-eldakak](https://github.com/mohamed-eldakak)) , for the project by Udacity.
