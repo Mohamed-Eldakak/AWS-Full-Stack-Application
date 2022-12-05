@@ -39,7 +39,8 @@ jobs:
           name: API Build
           command: |
             npm run api:build
-       - run:
+            
+      - run:
           name: Deploy App
           command: |
             echo "Deploying frontend"
@@ -59,6 +60,3 @@ workflows:
           type: approval
           requires:
             - build
-      - deploy:
-          requires:
-            - hold
