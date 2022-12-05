@@ -78,4 +78,4 @@ workflows:
                 - master
           type: approval
           requires:
-            - deploy
+            - build
