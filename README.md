@@ -1,9 +1,9 @@
 # Hosting a Full-Stack Application on AWS
 
 ### **Udagram is a full stack web application hosted on Amazon Web Services and is the final project under Udacity's Full Stack JavaScript Developer Nanodegree Program.**
-
+-----
+# Application is Hosted [Live](http://udagram-api-dev2.eba-wyg9zbd8.us-east-1.elasticbeanstalk.com)
 ---
-
 # Amazon Web Services
 
 ### AWS Simple Storage Service (S3)
