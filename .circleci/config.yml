@@ -1,48 +1,64 @@
 version: 2.1
 orbs:
-  # orbs contain basic recipes and reproducible actions (install node, aws, etc.)
+  # orgs contain basc recipes and reproducible actions (install node, aws, etc.)
   node: circleci/node@5.0.2
-  aws-cli: circleci/aws-cli@3.1.1
   eb: circleci/aws-elastic-beanstalk@2.0.1
+  aws-cli: circleci/aws-cli@3.1.1
+  # different jobs are calles later in the workflows sections
 jobs:
   build:
     docker:
       # the base image can run most needed actions with orbs
       - image: "cimg/node:14.15"
     steps:
+      # install node and checkout code
       - node/install:
           node-version: "14.15"
       - checkout
-      - aws-cli/setup
-      - eb/setup
-       # install dependencies for front-end application
+      # Use root level package.json to install dependencies in the frontend app
       - run:
-          name: Front-End Install
+          name: Install Front-End Dependencies
           command: |
+            echo "NODE --version" 
+            echo $(node --version)
+            echo "NPM --version" 
+            echo $(npm --version)
             npm run frontend:install
+      # TODO: Install dependencies in the the backend API
       - run:
-       # install dependencies for back-end application
-          name: Back-End Install
+          name: Install API Dependencies
           command: |
-            npm run backend:install
-
+            npm run api:install
+      # TODO: Build the frontend app
       - run:
-         # build front-end application
           name: Front-End Build
           command: |
             npm run frontend:build
+      # TODO: Build the backend API
       - run:
-        # build back-end application
-          name: Back-End Build
+          name: API Build
           command: |
-            npm run backend:build
-      - run:
-        # deploy front-end application
-          name: Deploy frontend
+            npm run api:build
+       - run:
+          name: Deploy App
           command: |
+            echo "Deploying frontend"
             npm run frontend:deploy
-      - run:
-        # build back-end application
-          name: Deploy backend
-          command: |
-            npm run backend:deploy
+            echo "Deploying backend"
+            npm run api:deploy
+
+workflows:
+  udagram:
+    jobs:
+      - build
+      - hold:
+          filters:
+            branches:
+              only:
+                - master
+          type: approval
+          requires:
+            - build
+      - deploy:
+          requires:
+            - hold
