@@ -2,6 +2,10 @@ branch-defaults:
   default:
     environment: udagram-api-dev
     group_suffix: null
+deploy:
+  artifact: www/Archive.zip
+  accessKeyId : process.env.AWS_ACCESS_KEY_ID
+secretAccessKey : process.env.AWS_SECRET_ACCESS_KEY
 global:
   application_name: udagram-api
   branch: null
@@ -16,3 +20,5 @@ global:
   repository: null
   sc: null
   workspace_type: Application
+  accessKeyId : process.env.AWS_ACCESS_KEY_ID
+  secretAccessKey : process.env.AWS_SECRET_ACCESS_KEY
