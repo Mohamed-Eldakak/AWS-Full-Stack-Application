@@ -1,6 +1,9 @@
 # Hosting a Full-Stack Application on AWS
 
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/github/Mohamed-Eldakak/AWS-Full-Stack-Application/39/workflows/c5984d12-8d64-4d8e-a6d3-f6989cd4ae55)
+
 ### **Udagram is a full stack web application hosted on Amazon Web Services and is the final project under Udacity's Full Stack JavaScript Developer Nanodegree Program.**
+
 -----
 # Application is Hosted [Live](http://eldakak-bucket.s3-website-us-east-1.amazonaws.com)
 ----
